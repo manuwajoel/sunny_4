@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .header-image {
+        height: 800px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url("images/desktop/image-header.jpg");
+      }
+      .nav-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+        height: 100px;
+        list-style-type: none;
+        font-family: "Barlow", sans-serif;
+      }
+      .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 32px;
+      }
+      .h1-img {
+        margin-top: 50px;
+      }
+      button {
+        color: black;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        height: 50px;
+        width: 130px;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 13px;
+        cursor: pointer;
+        margin-left: 8px;
+        transition: box-shadow 0.15s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .text-hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+        color: white;
+        flex-direction: column;
+      }
+      a {
+        color: white;
+        text-decoration-line: none;
+      }
+      .gallery {
+        height: 600px;
+        display: flex;
+      }
+      .gallery-1 {
+        width: 50%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding-left: 150px;
+      }
+      .gallery-2 {
+        width: 50%;
+        height: 600px;
+        background: url(images/desktop/image-transform.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .gallery-3 {
+        width: 50%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding-left: 150px;
+      }
+      .gallery-4 {
+        background: #cfe7d3;
+        width: 50%;
+        height: 600px;
+        background: url(images/desktop/image-stand-out.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .gallery-5 {
+        background: #cfe7d3;
+        width: 50%;
+        height: 600px;
+        background: url(images/desktop/image-graphic-design.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 350px;
+        text-align: center;
+      }
+      .gallery-6 {
+        background: #cfe7d3;
+        width: 50%;
+        height: 600px;
+        background: url(images/desktop/image-photography.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 350px;
+        text-align: center;
+      }
+      #reverse {
+        flex-direction: row-reverse;
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: bold;
+      }
+      .paragraph-1 {
+        color: #9898a0;
+        font-family: "Barlow", sans-serif;
+        line-height: 150%;
+      }
+      .learn {
+        font-family: "Fraunces", serif;
+        text-decoration: underline;
+        text-decoration-color: hsl(7, 99%, 70%);
+        text-decoration-thickness: 5px;
+      }
+      .creative {
+        font-size: 80px;
+        letter-spacing: 8px;
+      }
+      .sect-2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 150px 100px;
+      }
+      .clients-1 {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: Fraunces, sans-serif;
+        color: #aaa7a5;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        font-weight: 900;
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+        margin-bottom: 80px;
+      }
+      .testimonials-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .emily {
+        width: 50%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 25px;
+        text-align: center;
+        margin-right: 30px;
+      }
+      .thomas {
+        width: 50%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 25px;
+        text-align: center;
+        margin-right: 30px;
+      }
+      .jennie {
+        width: 50%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 25px;
+        text-align: center;
+        margin-right: 30px;
+      }
+      .user {
+        border-radius: 50px;
+        height: 60px;
+        position: relative;
+        bottom: 40px;
+      }
+      .user-name {
+        font-family: "Fraunces", serif;
+        font-weight: bold;
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-image">
+      <nav class="logo">
+        <img src="images/logo.svg" alt="" width="160px" />
+        <ul class="nav-items">
+          <li><a href="">About</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">Projects</a></li>
+          <li>
+            <a href=""><button>Contact</button></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="text-hero">
+        <h1 class="creative">WE ARE CREATIVES</h1>
+        <img src="images/icon-arrow-down.svg" alt="" class="h1-img" />
+      </div>
+    </header>
+    <section class="gallery">
+      <div class="gallery-1">
+        <h1>
+          Transform your <br />
+          brand
+        </h1>
+        <br />
+        <p class="paragraph-1">
+          We are a full-service creative agency specializing in <br />
+          helping brands grow fast. Engage your clients through <br />
+          compelling visuals that do most of the marketing for you.
+        </p>
+        <br />
+        <p class="learn">LEARN MORE</p>
+      </div>
+      <div class="gallery-2"></div>
+    </section>
+    <section class="gallery" id="reverse">
+      <div class="gallery-3">
+        <h1>
+          Stand out to the right<br />
+          audience
+        </h1>
+        <br />
+        <p class="paragraph-1">
+          Using a collaborative formula of designers, researchers, <br />
+          photographers, videographers, and copywriters, we’ll <br />
+          build and extend your brand in digital places.
+        </p>
+        <br />
+        <p class="learn">LEARN MORE</p>
+      </div>
+      <div class="gallery-4"></div>
+    </section>
+    <section class="gallery">
+      <div class="gallery-5">
+        <h1>Graphic Design</h1>
+        <br />
+        <p class="paragraph-1">
+          Great design makes you memorable. We deliver <br />
+          artwork that underscores your brand message <br />
+          and captures potential clients’ attention.
+        </p>
+      </div>
+      <div class="gallery-6">
+        <h1>Photography</h1>
+        <br />
+        <p class="paragraph-1">
+          Increase your credibility by getting the most <br />stunning,
+          high-quality photos that improve your <br />
+          business image.
+        </p>
+      </div>
+    </section>
+    <section class="sect-2">
+      <div>
+        <h1 class="clients-1">Client testimonials</h1>
+        <br />
+      </div>
+      <div class="testimonials-1">
+        <div class="emily">
+          <img src="images/image-emily.jpg" alt="" class="user" />
+          <p class="paragraph-1"></p>
+          <h1 class="user-name">Emily R.</h1>
+          <br />
+          <p class="paragraph-1">Marketing Director</p>
+        </div>
+        <div class="thomas">
+          <img src="images/image-thomas.jpg" alt="" class="user" />
+          <p class="paragraph-1"></p>
+          <h1 class="user-name">Thomas S.</h1>
+          yyy
+          <p class="paragraph-1">Chief Operating Officer</p>
+        </div>
+        <div class="jennie">
+          <img src="images/image-jennie.jpg" alt="" class="user" />
+          <p class="paragraph-1"></p>
+          <h1 class="user-name">Jennie F.</h1>
+          <br />
+          <p class="paragraph-1">Business Owner</p>
+        </div>
+      </div>
+    </section>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>. -->
+  </body>
+</html>
